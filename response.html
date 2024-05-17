@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reszponzív</title>
+    <style>
+
+        #nav{
+            position: relative;
+            background-color: #333;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        #nav a{
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            padding: 5px 10px;
+            background-color: #333;
+        }
+        #nav a:hover{
+            background-color: lightgrey;
+            color: black;
+        }
+        #nav a.selected{
+            background-color: lightgreen;
+            color: black;
+        }
+        #nav #ham{
+            display: none;
+        }
+        #nav #menu{
+            display: block;
+        }
+        body{
+            background-color: burlywood; margin: 0px;
+        }
+        #main{
+            width: 90%; margin: 0px auto;
+            background-color: white;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        #d1,#d2, #d3{
+            width: 33%;
+            border: 1px solid lightgrey;
+            text-align: center;
+            padding: 5px;
+        }
+        #row{
+            display: flex;
+        }
+        img{
+            width: 100%;
+        }
+        #kepek{
+            display: flex;
+            gap: 5px;
+        }
+        @media (max-width:1200px){
+            body{background-color: lightpink;}
+            #main{width: 90%;}
+        }
+        @media (max-width:900px){
+            body{background-color: lightseagreen;}
+            #nav #ham{display: inline-block;}
+            #nav #menu{display: none;}
+            #nav#menu.show{display: block;}
+            #nav#menu.show a{display: block;}
+            #row{display: block;}
+            #d1, #d2, #d3{width: 100%;}
+        }
+    </style>
+    <script>
+
+        function menu(){
+            let m = document.getElementById("menu")
+            if(m.className == "") m.className = "show"; else m.className = ""
+        }
+
+    </script>
+</head>
+<body>
+    <div id="nav">
+        <a href="#" id="ham" onclick="menu();">&#9776;</a>
+        <div id="menu" class="">
+            <a href="#" class="selected">Kezdőlap</a>
+            <a href="#">Szabályok</a>
+            <a href="#">Játék1</a>
+            <a href="#">Játék2</a>
+            <a href="#">Játék3</a>
+            <a href="#">Játék4</a>
+            <a href="#nevjegy">Névjegy</a>
+        </div>
+    </div>
+    <div id="main">
+        <div id="row">
+            <div id="d1"></div>
+            <div id="d2"></div>
+            <div id="d3"></div>
+        </div>
+        <img src="sun.jpg">
+        <div id="kepek">
+            <div><img src="sun1.jpg"></div>
+            <div><img src="sun1.jpg"></div>
+            <div><img src="sun1.jpg"></div>
+        </div>
+        <div id="kepek">
+            <div><img src="sun1.jpg"></div>
+            <div><img src="sun1.jpg"></div>
+            <div><img src="sun1.jpg"></div>
+        </div>
+        <div>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus illum adipisci ad, perferendis sed placeat natus doloremque quisquam nobis fugiat! Neque vel provident reprehenderit nam cum. Porro mollitia iste non?</p>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam animi alias neque debitis voluptas quibusdam ea, quo dignissimos excepturi odit incidunt ut aliquid deserunt eveniet natus labore dolor tempore repudiandae!</p>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Veniam cumque explicabo in incidunt optio numquam neque temporibus consectetur debitis. Sequi libero non modi molestiae! Quas voluptates laboriosam exercitationem similique optio!</p>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam nihil qui eos libero a blanditiis maxime, incidunt numquam, dicta optio modi voluptatum totam, facilis asperiores sapiente in accusantium corporis ipsa!</p>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tempore nostrum labore vitae consequatur quibusdam ad a dolorum voluptatibus, ab quam ut hic nulla alias minus sapiente iusto at illo velit?</p>
+        </div>
+        <a name="nevjegy"></a>
+        <div>Készítette: 12/A, 2024.05.17.</div>
+    </div>
+
+</body>
+</html>
